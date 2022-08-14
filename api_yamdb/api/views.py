@@ -1,5 +1,4 @@
 from random import sample
-
 from django_filters.rest_framework import DjangoFilterBackend
 from django.conf import settings
 from django.core.mail import send_mail
@@ -15,7 +14,6 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet, ModelViewSet
 from rest_framework_simplejwt.tokens import RefreshToken
-
 from .filters import TitleFilter
 from reviews.models import Category, Genre, Review, Title, User
 from .permissions import IsAdmin, IsAuthorOrModeratorOrReadOnly, ReadOnly
