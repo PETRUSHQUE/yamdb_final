@@ -1,17 +1,16 @@
-from django_filters.rest_framework import (
-    CharFilter, FilterSet, ModelMultipleChoiceFilter)
+import django_filters.rest_framework as filters
 from reviews.models import Category, Genre, Title
 
 
-class TitleFilter(FilterSet):
+class TitleFilter(filters.FilterSet):
     """Класс фильтра для модели произведение."""
-    category = ModelMultipleChoiceFilter(
+    category = filters.ModelMultipleChoiceFilter(
         field_name='category__slug', to_field_name='slug',
         queryset=Category.objects.all())
-    genre = ModelMultipleChoiceFilter(
+    genre = filters.ModelMultipleChoiceFilter(
         field_name='genre__slug', to_field_name='slug',
         queryset=Genre.objects.all())
-    name = CharFilter(field_name='name', lookup_expr='contains')
+    name = filters.CharFilter(field_name='name', lookup_expr='contains')
 
     class Meta:
         model = Title
