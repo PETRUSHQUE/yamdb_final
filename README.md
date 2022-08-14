@@ -1,3 +1,4 @@
+![workflow](https://github.com/petrushque/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 # YamDb Final
 
  Проект YaMDb представлен в виде web-приложения и БД, поднятых в docker контейнерах.\
