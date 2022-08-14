@@ -42,7 +42,7 @@ jobs:
           uses: docker/build-push-action@v2 
           with:
             push: true
-            tags: ${{ secrets.DOCKER_USERNAME }}/api_yamdb:1.0-stable
+            tags: petrushque/api_yamdb:1.0-stable
 
   deploy:
       runs-on: ubuntu-latest
@@ -74,6 +74,6 @@ jobs:
     - name: send message
       uses: appleboy/telegram-action@master
       with:
-        to: ${{ secrets.TG_CHATID }}
-        token: ${{ secrets.TG_TOKEN }}
+        to: ${{ secrets.TELEGRAM_CHAT_ID }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
         message: ${{ github.workflow }} успешно выполнен! 
