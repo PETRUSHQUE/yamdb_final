@@ -43,6 +43,8 @@ jobs:
           with:
             push: true
             tags: petrushque/api_yamdb:1.0-stable
+            context: api_yamdb
+            file: api_yamdb/Dockerfile
 
   deploy:
       runs-on: ubuntu-latest
